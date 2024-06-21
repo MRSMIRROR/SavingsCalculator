@@ -7,11 +7,16 @@ public class SavingsCalculator {
         int numberOfDays = scanner.nextInt();
         System.out.print("Enter the Number of Daily deposit ");
         int dailyAmount = scanner.nextInt();
+        System.out.print("Enter the Target Saving ");
+        int targetSaving = scanner.nextInt();
         int totalSavings = 0;
-        for (int day = 1; day <= numberOfDays; day++) {
+        int day = 0;
+        while (totalSavings < targetSaving) {
+            day++;
             totalSavings += dailyAmount;
-            System.out.println("Day " + day + " Deposit " + dailyAmount + " total is " + totalSavings);
+            System.out.println("Day " + day + ": Deposit " + dailyAmount + " baht, Total savings: " + totalSavings + " baht");
             dailyAmount *= 2;
         }
+        System.out.println("It will take " + day + " days to save at least " + targetSaving + " bahts.");
     }
 }
